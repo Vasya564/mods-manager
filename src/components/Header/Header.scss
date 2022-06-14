@@ -1,0 +1,29 @@
+header{
+    display: flex;
+    height: auto;
+    width: 100%;
+    background-color: #00311A;
+    grid-area: 1 / 1 / 2 / 3;
+    align-items: center;
+    -webkit-app-region: drag;
+}
+.title{margin-left: 10px;}
+.minimize-btn{
+    margin-left: auto;
+    height: 100%;
+    padding: 4px 10px;
+    -webkit-app-region: none;
+    &:hover{
+        cursor: pointer;
+    }
+}
+.close-btn{
+    padding: 4px 10px;
+    height: 100%;
+    -webkit-app-region: none;
+    &:hover{
+        background-color: firebrick;
+        transition: all .4s;
+        cursor: pointer;
+    }
+}

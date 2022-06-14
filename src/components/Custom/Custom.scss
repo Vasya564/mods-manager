@@ -1,0 +1,53 @@
+.cversions-header{
+    input{
+        height: 30px;
+        width: 350px;
+        border: 1px solid black;
+        background-color: #067242;
+        border-radius: 5px;
+        padding: 5px;
+        color: white;
+        outline: none;
+    }
+}
+.addc-btn{
+    margin-top: 5px;
+    border: none;
+    outline: none;
+    width: 100px;
+    color:white;
+    border-radius: 5px 5px 0px 0px;
+    height: 20px;
+    border: 1px solid black;
+    border-bottom: 0px;
+    background-color: #098B54;
+    &:hover{
+        cursor: pointer;
+    }
+}
+.browse-btn{
+    margin-left: auto;
+    align-self: flex-end;
+    button{
+        border: 1px solid black;
+        border-bottom: 0px;
+        color:white;
+        background-color: #098B54;
+    }
+}
+.cversions-list{
+    margin-top: 7px;
+    .btn-block{
+        text-align: center;
+    }
+}
+.cversions-list-header{
+    display: flex;
+}
+.cversions-list-inner{
+    border: 1px solid black;
+    border-radius: 5px 0px 5px 5px;
+    height: 250px;
+    padding: 20px;
+    overflow-y: scroll;
+}

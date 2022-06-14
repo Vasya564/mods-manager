@@ -1,0 +1,80 @@
+{
+  "name": "mods-manager-electron",
+  "version": "1.1.0",
+  "private": true,
+  "repository": {
+		"type": "git",
+		"url": "https://github.com/Vasya564/mods-manager"
+	},
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.1.1",
+    "@fortawesome/free-solid-svg-icons": "^6.1.1",
+    "@fortawesome/react-fontawesome": "^0.1.18",
+    "electron-is-dev": "^2.0.0",
+    "electron-updater": "^5.0.1",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "react-router-dom": "^6.3.0",
+    "react-scripts": "5.0.1",
+    "sass": "^1.52.1"
+  },
+  "main": "main.js",
+  "description": "An electron react template app",
+  "homepage": "/",
+  "author": {
+    "name": "Vasyl"
+  },
+  "build": {
+    "extends": null,
+    "appId": "com.mods.manager",
+    "productName": "ModsManager",
+    "copyright": "Copyright © 2022 ${author}",
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "files": [
+      "./main.js",
+      "./build/**/*",
+      "./node_modules/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets"
+    }
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "electron-dev": "concurrently \"cross-env BROWSER=none npm start\" \"wait-on http://localhost:3000 && nodemon --exec electron .\"",
+    "postinstall": "electron-builder install-app-deps",
+    "preelectron-pack": "npm run build",
+    "electron-pack": "electron-builder -w "
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "concurrently": "^7.2.1",
+    "cross-env": "^7.0.3",
+    "electron": "^19.0.1",
+    "electron-builder": "^23.0.3",
+    "nodemon": "^2.0.16",
+    "wait-on": "^6.0.1"
+  }
+}

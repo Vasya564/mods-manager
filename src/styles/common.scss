@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter');
+*{
+    box-sizing: border-box;
+    font-family: Inter;
+}
+.App{height: 100%;}
+.home{height: 100%;
+    width: 100%;}
+.main-grid{
+    display: grid;
+    grid-template-columns: 2fr 8fr;
+    grid-template-rows: 30px 4fr 4fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: #003E21;
+}
+main{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+    color: white;
+    grid-area: 2 / 2 / 4 / 3;
+}
+body,html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+}
+button{
+    border: none;
+    outline: none;
+    color: white;
+    &:hover{
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,68 @@
+aside{
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 100%;
+    background-color: #067242;
+    grid-area: 2 / 1 / 4 / 2;
+    user-select: none;
+    color: white;
+}
+.logo{
+    margin: 10px 0px;
+    text-align: center;
+    img{
+        height: 100px;
+        width: 100px;
+        object-fit: contain;
+    }
+}
+.nav-button{
+    display: flex;
+    padding-left: 25px;
+    align-items: center;
+    height: 50px;
+    font-size: 20px;
+    text-decoration: none;
+    color:#eeeeee;
+    &:hover{
+        cursor: pointer;
+        color: white;
+        background-color: #098B54;
+        transition: all ease .4s;
+    }
+}
+.nav-button:last-child{
+    margin-top: auto;
+}
+.active{
+    @extend .nav-button;
+    background-color: #098B54;
+    color: white;
+    border-left: 2px solid white;
+}
+#iconSpan{
+    margin-left: 2px;
+}
+.sub-nav-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30px;
+    color:#eeeeee;
+    text-decoration: none;
+    font-size: 18px;
+    &:hover{
+        background-color: #0A814E;
+        transition: all ease .4s;
+        cursor: pointer;
+        color: white;
+    }
+}
+.sub-active{
+    @extend .sub-nav-button;
+    background-color: #098B54;
+    color: white;
+    border-left: 2px solid white;
+}

@@ -1,0 +1,49 @@
+.path-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    z-index: 2;
+    grid-area: 2 / 1 / 4 / 3;
+    background-color: #003E21;
+}
+.path-block{
+    width: 400px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #067242;
+    border-radius: 5px;
+    input{
+        width: 280px;
+        height: 30px;
+        border-radius: 5px 0px 0px 5px;
+        border: 1px solid black;
+        outline: none;
+        background-color: #067242;
+    }
+    button{
+        border: 1px solid black;
+        outline: none;
+        border-radius: 0px 5px 5px 0px;
+        height: 30px;
+        width: 70px;
+        background-color: #098B54;
+        border-left: 0px;
+    }
+}
+.path-next-btn{
+    position: absolute;
+    top: 560px;
+    left: 700px;
+    button{
+        font-size: 16px;
+        border-radius: 5px;
+        height: 30px;
+        width: 90px;
+        background-color: #067242;
+    }
+}
