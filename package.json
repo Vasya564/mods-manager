@@ -41,6 +41,7 @@
       "buildResources": "assets"
     },
     "win": {
+      "icon": "./src/assets/icon.ico",
 			"publish": [
 				"github"
 			]
