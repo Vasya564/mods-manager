@@ -55,7 +55,11 @@
     "postinstall": "electron-builder install-app-deps",
     "preelectron-pack": "npm run build",
     "electron-pack": "electron-builder -w ",
+<<<<<<< HEAD
     "publish": "react-scripts build && electron-builder --win --publish always"
+=======
+    "publish": "set GH_TOKEN= &&  electron-builder --win --publish always"
+>>>>>>> 286cee7cccb19151f1c396fc77a5b90d1f339ae8
   },
   "eslintConfig": {
     "extends": [
