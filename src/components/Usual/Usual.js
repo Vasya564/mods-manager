@@ -4,7 +4,7 @@ import { faPlus, faXmark } from '@fortawesome/free-solid-svg-icons';
 import './Usual.scss'
 const Usual = () => {
     const [versionInput, setVersionInput] = useState('');
-    const validVersion = new RegExp('/^1\.[0-9]{1,2}\.[0-9]{1,2}|1\.[0-9]{1,2}/')
+    const validVersion = new RegExp('^1\.[0-9]{1,2}\.[0-9]{1,2}|1\.[0-9]{1,2}')
     const [usualVersions, setUsualVersions] = useState(()=> localStorage.getItem('versions') ? JSON.parse(localStorage.getItem('versions')) : []);
 
     useEffect(() =>{
@@ -23,13 +23,13 @@ const Usual = () => {
                     setUsualVersions(oldArray => [...oldArray, versionInput])
                 }
             }
-            // else{
-            //     alert('Invalid version format regex');
-            // }   
+            else{
+                console.log('Invalid version format regex');
+            }   
         }
-        // else{
-        //     alert('Invalid version format');
-        // }
+        else{
+            console.log('Invalid version format');
+        }
     }
 
     return (

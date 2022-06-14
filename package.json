@@ -20,7 +20,7 @@
   },
   "main": "main.js",
   "description": "An electron react template app",
-  "homepage": "/",
+  "homepage": "./",
   "author": {
     "name": "Vasyl"
   },

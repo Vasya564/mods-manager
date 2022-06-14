@@ -19,10 +19,11 @@ function createWindow () {
 
     if (isDev) {
         mainWindow.loadURL('http://localhost:3000');
-        //mainWindow.webContents.openDevTools();
+        mainWindow.webContents.openDevTools();
     } else {
-        mainWindow.loadFile('build/index.html')
+        mainWindow.loadFile('build/index.html');
         autoUpdater.checkForUpdates();
+        mainWindow.webContents.openDevTools();
     }
     ipcMain.handle('minimize-event', () => {
         mainWindow.minimize()
