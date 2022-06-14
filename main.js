@@ -22,8 +22,7 @@ function createWindow () {
         mainWindow.webContents.openDevTools();
     } else {
         mainWindow.loadFile('build/index.html');
-        autoUpdater.checkForUpdates();
-        mainWindow.webContents.openDevTools();
+        //mainWindow.webContents.openDevTools();
     }
     ipcMain.handle('minimize-event', () => {
         mainWindow.minimize()
@@ -36,7 +35,7 @@ function createWindow () {
 
 app.whenReady().then(() => {
     createWindow()
-  
+    autoUpdater.checkForUpdates();
     ipcMain.handle('path-dialog-event', (event) =>{
         dialog.showOpenDialog({
             defaultPath: app.getPath('desktop'),
