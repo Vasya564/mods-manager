@@ -73,6 +73,20 @@ const HomeContent = () => {
             setActiveVersion(version);
         }
     }
+
+    const disableMods = () => {
+        fs.readdir(String(modsFolder), (err, files) => {
+            files.forEach(file => {
+                fs.rename(String(modsFolder) + '/' + file, String(destFolder) + '/' + file, function (err) {
+                    if (err) {
+                        throw err
+                    }
+                });
+            });
+        });
+        localStorage.setItem('active', 'Without mods');
+        setActiveVersion('Without mods');
+    }
     return (
         <main>
             <section className='active-version'>
@@ -97,6 +111,10 @@ const HomeContent = () => {
                         </section> 
                     )}
                 </section>
+                <section className='list-item'>
+                        <article>Without mods</article>
+                        <article style={{marginLeft: 'auto'}}><button className='activate-btn' onClick={disableMods}>Activate</button></article>
+                    </section>
             </section>
             {/* <button onClick={() => localStorage.removeItem('path')}>Del path</button> */}
         </main>
