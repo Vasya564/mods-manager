@@ -23,6 +23,7 @@ function createWindow () {
         mainWindow.webContents.openDevTools();
     } else {
         mainWindow.loadFile('build/index.html');
+        //mainWindow.webContents.openDevTools();
     }
     ipcMain.handle('minimize-event', () => {
         mainWindow.minimize()

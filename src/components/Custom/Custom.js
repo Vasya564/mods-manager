@@ -38,7 +38,7 @@ const Custom = () => {
         <main className="center">
             <section className="uversions-block">
                 <section className="cversions-header">
-                    <article className="heading">Version name</article>
+                    <article className="heading">Version number</article>
                     <input onChange={(e) => setVersionName(e.target.value)} type='text'></input>
                 </section>
                 <section className="cversions-list">
