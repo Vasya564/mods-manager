@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300');
 *{
     box-sizing: border-box;
     font-family: Inter;
@@ -37,4 +37,88 @@ button{
     &:hover{
         cursor: pointer;
     }
+}
+.versions-block{
+    display: flex;
+    flex-direction: column;
+    padding: 30px 25px;
+    width: 400px;
+    height: 400px;
+    border-radius: 5px;
+    background-color: #067242;
+}
+.versions-list{
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 250px;
+    padding: 20px;
+}
+.versions-list-inner{
+    height: 210px;
+    overflow-y: scroll;
+}
+.versions-list-item{
+    display: flex;
+    align-items: center;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    padding: 0px 0px 0px 10px;
+    transition: all .3s;
+    pointer-events: none;
+    &:hover{
+        border: 2px dashed #FF3632;
+    }
+    button{
+        background-color: #067242;
+        border-radius: 0px 5px 5px 0px;
+        height: 100%;
+        width: 40px;
+        pointer-events: auto;
+        transition: all .3s;
+        &:hover{
+            color: #FF3632;
+            width: 38px;
+        }
+    } 
+}
+.modal{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 40px;
+    right: 0px;
+    color: white;
+    background-color: #067242;
+    width: max-content;
+    height: 35px;
+    font-size: 15px;
+    padding: 0px 10px;
+    outline: none;
+    border-radius: 5px 0px 0px 5px;
+    p{
+        display: inline-block;
+        margin-left: 5px;
+    }
+}
+.modal-overlay{
+    background-color: transparent;
+}
+.ReactModal__Overlay {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: all 500ms ease-in-out;
+}
+.ReactModal__Overlay--after-open {
+    opacity: 1;
+    transform: translateX(0px);
+} 
+.ReactModal__Overlay--before-close {
+    opacity: 0;
+    transform: translateX(100px);
 }

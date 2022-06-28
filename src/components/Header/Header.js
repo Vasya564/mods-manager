@@ -14,8 +14,8 @@ const Header = () => {
     return (
         <header>
             <section className='title'>Mods Manager</section>
-            <section className='minimize-btn'><FontAwesomeIcon icon={faMinus} onClick={minimizeHandler}/></section>
-            <section className='close-btn'><FontAwesomeIcon icon={faXmark} size='lg' onClick={closeHandler}/></section>
+            <section className='minimize-btn' onClick={minimizeHandler}><FontAwesomeIcon icon={faMinus}/></section>
+            <section className='close-btn' onClick={closeHandler}><FontAwesomeIcon icon={faXmark} size='lg'/></section>
         </header>
     );
 }

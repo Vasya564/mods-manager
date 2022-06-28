@@ -1,11 +1,11 @@
 {
   "name": "mods-manager-electron",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "private": true,
   "repository": {
-		"type": "git",
-		"url": "https://github.com/Vasya564/mods-manager"
-	},
+    "type": "git",
+    "url": "https://github.com/Vasya564/mods-manager"
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.1.1",
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
@@ -14,8 +14,9 @@
     "electron-updater": "^5.0.1",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
+    "react-modal": "^3.15.1",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "sass": "^1.52.1"
   },
   "main": "main.js",
@@ -42,10 +43,10 @@
     },
     "win": {
       "icon": "./src/assets/icon.ico",
-			"publish": [
-				"github"
-			]
-		}
+      "publish": [
+        "github"
+      ]
+    }
   },
   "scripts": {
     "start": "react-scripts start",

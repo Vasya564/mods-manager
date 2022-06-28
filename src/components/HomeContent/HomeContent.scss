@@ -6,18 +6,19 @@
 .main-list{
     box-sizing: border-box;
     width: 400px;
-    height: 375px;
+    height: 385px;
     margin: auto;
     section{width: 100%;}
 }
 .list-header{
-    height: 25px;
+    height: 35px;
     display: flex;
     align-items: center;
     background-color: #535353;
     border-radius: 5px;
-    padding: 0px 15px;
-    font-size: 14px;
+    box-shadow: 0px 1px 1px 1px rgba(0, 0, 0, 0.5);
+    padding: 0px 10px;
+    font-size: 18px;
 }
 .list-content{
     display: flex;
@@ -28,19 +29,20 @@
 .list-item{
     display: flex;
     align-items: center;
-    padding: 0px 5px 0px 15px;
+    padding: 0px 0px 0px 15px;
     min-height: 30px;
     margin-top: 5px;
     border-radius: 5px;
     background-color: #067242;
 }
 .activate-btn{
-    background-color: #098B54;
-    border-radius: 5px;
+    background-color: #0c8452;
+    border-radius: 0px 5px 5px 0px;
     border: none;
     outline: none;
     color: white;
-    height: 20px;
+    height: 30px;
+    transition: all .3s;
     &:hover{
         cursor: pointer;
         background-color: #0f9d62;
@@ -48,4 +50,34 @@
 }
 ::-webkit-scrollbar {
     display: none;
+}
+.wm-list-item{
+    @extend .list-item;
+    background-color: #535353;
+    button{
+        background-color: #4d4d4d;
+        &:hover{
+            background-color: #434343; 
+        }  
+    }
+}
+.modal-home{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 80px;
+    right: 0px;
+    color: white;
+    background-color: #067242;
+    width: max-content;
+    height: 35px;
+    font-size: 15px;
+    padding: 0px 10px;
+    outline: none;
+    border-radius: 5px 0px 0px 5px;
+    p{
+        display: inline-block;
+        margin-left: 5px;
+    }
 }

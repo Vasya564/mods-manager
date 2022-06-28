@@ -13,7 +13,9 @@ header{
     height: 100%;
     padding: 4px 10px;
     -webkit-app-region: none;
+    transition: all .4s;
     &:hover{
+        background-color: #003E21;
         cursor: pointer;
     }
 }
@@ -21,9 +23,9 @@ header{
     padding: 4px 10px;
     height: 100%;
     -webkit-app-region: none;
+    transition: all .4s;
     &:hover{
         background-color: firebrick;
-        transition: all .4s;
         cursor: pointer;
     }
 }

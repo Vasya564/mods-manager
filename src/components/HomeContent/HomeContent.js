@@ -1,15 +1,38 @@
 import './HomeContent.scss'
 import { useState } from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCircleInfo, faTriangleExclamation } from '@fortawesome/free-solid-svg-icons';
+import Modal from "react-modal";
 const fs = window.require('fs');
 const path = window.require('path');
 const HomeContent = () => {
-
+    Modal.setAppElement("#root");
     const [versionList, setVersionList] = useState(()=> localStorage.getItem('versions') ? JSON.parse(localStorage.getItem('versions')) : []);
     const [customVersion, setCustomVersion] = useState(()=> localStorage.getItem('cversions') ? JSON.parse(localStorage.getItem('cversions')) : {});
     const [activeVersion, setActiveVersion] = useState(()=> localStorage.getItem('active') ? localStorage.getItem('active') : ' ');
+    const [isOpen, setIsOpen] = useState(false);
+    const [modalText, setModalText] = useState('');
+    const [modalIcon, setModalIcon] = useState('');
+    const [isModalWarning, setIsModalWarning] = useState(false);
 
     var modsFolder = JSON.parse(localStorage.getItem('path'));
-    var destFolder = path.join(String(modsFolder), '..', '/umods')
+    var destFolder = path.join(String(modsFolder), '..', '/umods');
+
+
+    const openModal = (text, icon) => {
+        setModalText(text);
+        setModalIcon(icon);
+        if(icon.iconName == 'triangle-exclamation'){
+            setIsModalWarning(true)
+        }else{
+            setIsModalWarning(false);
+        };
+        setIsOpen(true);
+        setTimeout(closeModal, 3000);
+    }
+    const closeModal = () => {
+        setIsOpen(false);
+    }
 
     const activateMods = (version) => {
         if (version != activeVersion){
@@ -36,13 +59,14 @@ const HomeContent = () => {
                     });
                 }
             });
-            //alert("Mods successfully activated");
+            openModal("Version successfully activated", faCircleInfo);
             localStorage.setItem('active', version);
             setActiveVersion(version);
         });
         }
-        //else{alert('Mods for this version are already activated')}
+        else{openModal("This version is already activated", faTriangleExclamation);}
     }
+    
 
     const activateCustomMods = (version) => {
         if (version != activeVersion){
@@ -68,13 +92,15 @@ const HomeContent = () => {
                     });
                 });
             });
-            //alert("Mods successfully activated");
+            openModal("Version successfully activated", faCircleInfo);
             localStorage.setItem('active', version);
             setActiveVersion(version);
         }
+        else{openModal("This version is already activated", faTriangleExclamation);}
     }
 
     const disableMods = () => {
+        if ('Without mods' != activeVersion){
         fs.readdir(String(modsFolder), (err, files) => {
             files.forEach(file => {
                 fs.rename(String(modsFolder) + '/' + file, String(destFolder) + '/' + file, function (err) {
@@ -84,14 +110,27 @@ const HomeContent = () => {
                 });
             });
         });
+        openModal("Mods successfully disabled", faCircleInfo);
         localStorage.setItem('active', 'Without mods');
         setActiveVersion('Without mods');
+        }
+        else{openModal("Mods are already disabled", faTriangleExclamation);}
     }
     return (
         <main>
             <section className='active-version'>
                 <article>{activeVersion}</article>
             </section>
+            <Modal
+                isOpen={isOpen}
+                closeTimeoutMS={500}
+                contentLabel="My dialog"
+                className="modal-home"
+                overlayClassName="modal-overlay"
+                style={{content:{backgroundColor: isModalWarning ? '#B82100' : '#067242'}}}
+            >
+                <div><FontAwesomeIcon icon={modalIcon} size='xl'></FontAwesomeIcon><p>{modalText}</p></div>
+            </Modal>
             <section className='main-list'>
                 <section className='list-header'>
                     <article>Version</article>
@@ -111,7 +150,7 @@ const HomeContent = () => {
                         </section> 
                     )}
                 </section>
-                <section className='list-item'>
+                <section className='wm-list-item'>
                         <article>Without mods</article>
                         <article style={{marginLeft: 'auto'}}><button className='activate-btn' onClick={disableMods}>Activate</button></article>
                     </section>

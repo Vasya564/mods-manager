@@ -1,8 +1,11 @@
 import packageJson from '../../../package.json';
+import "./Settings.scss"
 const Settings = () => {
     return (
        <main>
-           version {packageJson.version}
+            <section className='settings-block'>
+                <p>Version: {packageJson.version}</p>
+            </section>
        </main> 
     );
 }
