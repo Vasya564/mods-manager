@@ -7,17 +7,17 @@
     "url": "https://github.com/Vasya564/mods-manager"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^6.1.1",
-    "@fortawesome/free-solid-svg-icons": "^6.1.1",
-    "@fortawesome/react-fontawesome": "^0.1.18",
+    "@fortawesome/fontawesome-svg-core": "^6.3.0",
+    "@fortawesome/free-solid-svg-icons": "^6.3.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "electron-is-dev": "^2.0.0",
-    "electron-updater": "^5.0.1",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "react-modal": "^3.15.1",
-    "react-router-dom": "^6.3.0",
+    "electron-updater": "^5.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-modal": "^3.16.1",
+    "react-router-dom": "^6.9.0",
     "react-scripts": "^5.0.1",
-    "sass": "^1.52.1"
+    "sass": "^1.59.3"
   },
   "main": "main.js",
   "description": "An electron react template app",
@@ -78,11 +78,11 @@
     ]
   },
   "devDependencies": {
-    "concurrently": "^7.2.1",
+    "concurrently": "^7.6.0",
     "cross-env": "^7.0.3",
-    "electron": "^19.0.1",
-    "electron-builder": "^23.0.3",
-    "nodemon": "^2.0.16",
-    "wait-on": "^6.0.1"
+    "electron": "^23.1.4",
+    "electron-builder": "^24.0.0",
+    "nodemon": "^2.0.21",
+    "wait-on": "^7.0.1"
   }
 }
