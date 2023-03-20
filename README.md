@@ -27,17 +27,27 @@ Go to [releases] and download latest version
 > **[version]** in modification name
 
 After installation the app you should choose modifications path folder
-![](screens/mods_path.png)
+
+<img src="screens/mods_path.png" width="700">
+
 Now you are on the home screen where you can see all versions list, the active version
 will be displayed in the top right corner 
-![](screens/home.png)
+
+<img src="screens/home.png" width="700">
+
 On usual versions page you can add versions in format x.xx.x, x.x, x.xx
-![](screens/usual_versions.png)
+
+<img src="screens/usual_versions.png" width="700">
+
 Custom versions page allow to create versions with selected modifications or to create
 your own modpacks
-![](screens/custom_versions.png)
+
+<img src="screens/custom_versions.png" width="700">
+
 After creating versions you can activate one of them or disable all modifications
-![](screens/home_active.png)
+
+<img src="screens/home_active.png" width="700">
+
 ## License
 
 MIT
